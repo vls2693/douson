@@ -1,9 +1,15 @@
-x = ['первый', 'второй', 'третий']
+people = []
+summ = []
 
+def calc(a):
+    a = []
+    n = int(input())
+    for i in range(n):
+        new_element = str(input())
+        a.append(new_element)
 
-def x3(*args):
-    for i in range(0, 3):
-        print(*args[0][i])
+calc(people)
+calc(summ)
 
-
-x3(x)
+print(people)
+print(summ)
