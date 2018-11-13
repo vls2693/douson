@@ -1,7 +1,9 @@
-x = [1, 2, 3]
+x = ['первый', 'второй', 'третий']
 
 
 def x3(*args):
-    print(*args)
+    for i in range(0, 3):
+        print(*args[0][i])
 
-x3(a, b, c, d)
+
+x3(x)
