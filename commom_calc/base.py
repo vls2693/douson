@@ -74,6 +74,33 @@ def report2(people, summ, amount, average, plus_people, plus_summ, minus_people,
 report2(people, summ, amount, average, plus_people, plus_summ, minus_people,
             minus_summ)
 
+
+'''
+from Rebel:
+
+никогда  не называй
+переменные и функции одним и тем же именем
+транслитом
+
+def transaction(plus_people, plus_summ, minus_people, minus_summ):
+    for i in range(0, len(minus_summ)):
+        for l in range(len(plus_summ)):
+            print()
+короче адок. Никогда так не делай. Не надо все в отдельных переменных хранить
+Должен быть класс человека
+и у него параметры
+аргументы
+
+print("Всего потрачено: " + str(amount))
+не надо складывать. Плохая привычка
+потому что память начинает хратить 3 варианта - два отдельных слагаемых и сумму
+лучше .join или .format
+
+print("Всего потрачено: {}".format(amount))
+тут str не нужно, обрати внимание, про format  все переменные полиморфируют в стринги
+'''
+
+
 '''
 def calc_person(b):
     #n = int(input())
@@ -95,8 +122,9 @@ calc_bill(summ)
 print(people)
 print(summ)
 '''
-
+'''
 d = {'Риваль': 1771, 'Василий': 638, 'Геннадий': 500, 'Егор': 0, 'Михаил': 0,
      'Ильнар': 0, 'Дядя Саша': 0}
 print(dict.items(d))
 print(dict.keys(d))
+'''
