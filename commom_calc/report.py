@@ -1,5 +1,5 @@
 def report(people, summ, amount, average, plus_people, plus_summ, minus_people,
-            minus_summ): # отчёт
+           minus_summ):  # отчёт
     print('Скидывали:')
     for i in range(0, len(summ)):
         if summ[i] != 0:
