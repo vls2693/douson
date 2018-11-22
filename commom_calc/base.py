@@ -1,3 +1,7 @@
+from commom_calc.distributor import distributor
+from commom_calc.report import report
+
+
 people = ['Риваль', 'Василий', 'Геннадий', 'Егор', 'Михаил', 'Ильнар',
           'Дядя Саша'] # люди
 summ = [1771, 638, 500, 0, 0, 0, 0] # потраченное каждым
@@ -19,24 +23,6 @@ amount = amount(summ)
 average = average(summ, amount)
 
 
-def distributor(people, summ, average):
-    plus_people = []
-    minus_people = []
-    plus_summ = []
-    minus_summ = []
-    for i in range(0, len(summ)):
-        if summ[i] > average:
-            m = summ[i] - average
-            plus_summ.append(m)
-            plus_people.append(people[i])
-        elif summ[i] < average:
-            n = average - summ[i]
-            minus_summ.append(n)
-            minus_people.append(people[i])
-        else:
-            continue
-    return plus_people, plus_summ, minus_people, minus_summ
-
 
 def transaction(plus_people, plus_summ, minus_people, minus_summ):
     for i in range(0, len(minus_summ)):
@@ -48,30 +34,10 @@ def transaction(plus_people, plus_summ, minus_people, minus_summ):
 plus_people, plus_summ, minus_people, minus_summ = distributor(people, summ,
                                                                average)
 
-print(plus_people, plus_summ, minus_people, minus_summ)
+#print(plus_people, plus_summ, minus_people, minus_summ)
 
 
-def report2(people, summ, amount, average, plus_people, plus_summ, minus_people,
-            minus_summ): # отчёт
-    print('Скидывали:')
-    for i in range(0, len(summ)):
-        if summ[i] != 0:
-            print(str(people[i]) + " - " + str(summ[i]) + "р.")
-    print()
-    print("Всего потрачено: {}".format(amount))
-    print()
-    print("Среднее арифметическое потраченного " + str(average) + "р.")
-    print()
-    print("Должны скинуть: ")
-    for i in range(0, len(minus_people)):
-        print(str(minus_people[i]) + ' - ' + str(minus_summ[i]) + "р.")
-    print()
-    print("Должны получить: ")
-    for i in range(0, len(plus_people)):
-        print(str(plus_people[i]) + ' - ' + str(plus_summ[i]) + "р.")
-
-
-report2(people, summ, amount, average, plus_people, plus_summ, minus_people,
+report(people, summ, amount, average, plus_people, plus_summ, minus_people,
             minus_summ)
 
 
