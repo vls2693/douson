@@ -58,7 +58,7 @@ def report2(people, summ, amount, average, plus_people, plus_summ, minus_people,
         if summ[i] != 0:
             print(str(people[i]) + " - " + str(summ[i]) + "р.")
     print()
-    print("Всего потрачено: " + str(amount))
+    print("Всего потрачено: {}".format(amount))
     print()
     print("Среднее арифметическое потраченного " + str(average) + "р.")
     print()
