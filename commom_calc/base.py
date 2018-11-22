@@ -1,26 +1,16 @@
 from commom_calc.distributor import distributor
 from commom_calc.report import report
-
+from commom_calc.amount import amount_counter
+from commom_calc.average import average_counter
 
 people = ['Риваль', 'Василий', 'Геннадий', 'Егор', 'Михаил', 'Ильнар',
           'Дядя Саша'] # люди
 summ = [1771, 638, 500, 0, 0, 0, 0] # потраченное каждым
 
 
-def amount(summ):
-    amount = 0
-    for i in range(0, len(summ)):
-        amount = round(amount + summ[i], 2)
-    return amount
 
-
-def average(summ, amount): # среднее арифметическое потраченного
-    average = round(amount / len(summ), 2)
-    return average
-
-
-amount = amount(summ)
-average = average(summ, amount)
+amount = amount_counter(summ)
+average = average_counter(summ, amount)
 
 
 
