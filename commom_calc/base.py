@@ -17,33 +17,41 @@ def transaction(plus_people, plus_summ, minus_people, minus_summ):
     transaction_plus = []
     for i in range(0, len(minus_summ)):
         for l in range(0, len(plus_summ)):
-            if minus_summ[i] < plus_summ[l]:
-                transaction_minus.append(minus_people[i])
-                transaction_summ.append(minus_summ[i])
-                transaction_plus.append(plus_people[l])
-                plus_summ[l] = plus_summ[l] - minus_summ[i]
-            elif minus_summ[i] >= plus_summ[l]:
-                transaction_minus.append(minus_people[i])
-                transaction_summ.append(plus_summ[l])
-                transaction_plus.append(plus_people[l])
-                del plus_summ[l]
-                del plus_people[l]
-                minus_summ[i] = minus_summ[i] - plus_summ[l]
+            if plus_summ[l] <= 0:
                 continue
+            elif minus_summ[i] <= 0:
+                continue
+            else:
+                if minus_summ[i] < plus_summ[l]:
+                    transaction_minus.append(minus_people[i])
+                    minus_summ[i] = float('{:.2f}'.format(minus_summ[i]))
+                    transaction_summ.append(minus_summ[i])
+                    transaction_plus.append(plus_people[l])
+                    plus_summ[l] = plus_summ[l] - minus_summ[i]
+                    minus_summ[i] = 0
+                elif minus_summ[i] >= plus_summ[l]:
+                    transaction_minus.append(minus_people[i])
+                    plus_summ[l] = float('{:.2f}'.format(plus_summ[l]))
+                    transaction_summ.append(plus_summ[l])
+                    transaction_plus.append(plus_people[l])
+                    minus_summ[i] = minus_summ[i] - plus_summ[l]
 
     return transaction_minus, transaction_summ, transaction_plus
 
 
-
-plus_people, plus_summ, minus_people, minus_summ = distributor(people, summ,
+plus_people, plus_summ, minus_people, minus_summ, plus_people_rep, \
+plus_summ_rep, minus_people_rep, minus_summ_rep = distributor(people, summ,
                                                                average)
 
-
-print(transaction(plus_people, plus_summ, minus_people, minus_summ))
 print(plus_people, plus_summ, minus_people, minus_summ)
+transaction_minus, transaction_summ, transaction_plus = transaction(plus_people,
+                                                                    plus_summ, minus_people, minus_summ)
+
+#print(transaction(plus_people, plus_summ, minus_people, minus_summ))
+#print(plus_people, plus_summ, minus_people, minus_summ)
 print(len(plus_people), len(plus_summ), len(minus_people), len(minus_summ))
-report(people, summ, amount, average, plus_people, plus_summ, minus_people,
-       minus_summ)
+report(people, summ, amount, average, plus_people_rep, plus_summ_rep, minus_people_rep,
+       minus_summ_rep, transaction_minus, transaction_summ, transaction_plus)
 
 '''
 from Rebel:
