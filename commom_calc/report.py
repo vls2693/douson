@@ -21,7 +21,6 @@ def report(people, summ, amount, average, plus_people_rep, plus_summ_rep,
     print("Список транзакций: ")
     for i in range(0, len(transaction_minus)):
         print(transaction_minus[i] + ' ---> ' + transaction_plus[i]
-              + "  "+ str(transaction_summ[i]) + "р.")
+              + "  " + str(transaction_summ[i]) + "р.")
 
-
-#float('{:.2f}'.format(minus_summ[i]))
+# float('{:.2f}'.format(minus_summ[i]))
