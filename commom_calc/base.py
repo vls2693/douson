@@ -1,6 +1,6 @@
 from commom_calc.amount import amount_counter
 from commom_calc.average import average_counter
-from commom_calc.distributor import distributor
+from commom_calc.sorting import sorting
 from commom_calc.report import report
 from commom_calc.transaction import transaction
 
@@ -13,8 +13,8 @@ amount = amount_counter(summ)
 average = average_counter(summ, amount)
 
 plus_people, plus_summ, minus_people, minus_summ, plus_people_rep, \
-plus_summ_rep, minus_people_rep, minus_summ_rep = distributor(people, summ,
-                                                              average)
+plus_summ_rep, minus_people_rep, minus_summ_rep = sorting(people, summ,
+                                                          average)
 
 transaction_minus, transaction_summ, transaction_plus = transaction(plus_people,
                                                                     plus_summ, minus_people, minus_summ)

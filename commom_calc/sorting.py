@@ -1,4 +1,4 @@
-def distributor(people, summ, average):
+def sorting(people, summ, average):
     plus_people = []
     minus_people = []
     plus_summ = []

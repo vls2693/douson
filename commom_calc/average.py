@@ -1,3 +1,3 @@
-def average_counter(summ, amount):  # среднее арифметическое потраченного
-    average = round(amount / len(summ), 2)
+def average_counter(list_of_persons, amount):  # среднее арифметическое потраченного
+    average = round(amount / len(list_of_persons), 2)
     return average
