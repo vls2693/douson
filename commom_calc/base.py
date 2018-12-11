@@ -4,6 +4,7 @@ from commom_calc.sorting import sorting
 from commom_calc.report import report
 from commom_calc.transaction import transaction
 
+
 people = ['Риваль', 'Василий', 'Геннадий', 'Егор', 'Михаил', 'Ильнар',
           'Дядя Саша']  # люди
 

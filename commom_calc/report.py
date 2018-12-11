@@ -3,8 +3,7 @@ def report(people, summ, amount, average, plus_people_rep, plus_summ_rep,
            transaction_summ, transaction_plus):  # отчёт
     print('Скидывали:')
     for i in range(0, len(summ)):
-        if summ[i] != 0:
-            print(str(people[i]) + " - " + str(summ[i]) + "р.")
+        print(str(people[i]) + " - " + str(summ[i]) + "р.")
     print()
     print("Всего потрачено: {}р.".format(amount))
     print()
