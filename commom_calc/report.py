@@ -23,3 +23,5 @@ def report(people, summ, amount, average, plus_people_rep, plus_summ_rep,
               + "  " + str(transaction_summ[i]) + "р.")
 
 # float('{:.2f}'.format(minus_summ[i]))
+# пример записи в html
+# http://qaru.site/questions/308612/how-to-write-and-save-html-file-in-python
