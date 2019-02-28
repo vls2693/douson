@@ -8,6 +8,7 @@ def main():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
+    return render_template('index.html')
     name1 = str(request.form['name1'])
     summ1 = int(request.form['summ1'])
     name2 = str(request.form['name2'])
