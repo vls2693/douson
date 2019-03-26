@@ -4,14 +4,45 @@ from flask import render_template
 def report(people, summ, amount, average, plus_people_rep, plus_summ_rep,
            minus_people_rep, minus_summ_rep, transaction_minus,
            transaction_summ, transaction_plus):  # отчёт
-    a = 'Скидывали:'
-    with open("../flask/templates/file.html", "a") as file:
-        file.write(a)
-    for i in range(0, len(summ)):
-        b = (str(people[i]) + " - " + str(summ[i]) + "р.")
-        # Write to HTML to file.html
-        with open("../flask/templates/file.html", "a") as file:
-            file.write(b)
+    name_list = 'Скидывали:'
+    br = '<br>'
+    with open("../flask/templates/file.html", "w") as file:
+        file.write(name_list)
+        file.write(br)
+        for i in range(0, len(summ)):
+            names = (str(people[i]) + " - " + str(summ[i]) + "р.")
+            # Write to HTML to file.html
+            file.write(names)
+            file.write(br)
+        file.write(br)
+        file.write(str("Всего потрачено: {}р.".format(amount)))
+        file.write(br)
+        file.write(br)
+        file.write(str("Среднее арифметическое потраченного {}р.".format(average)))
+        file.write(br)
+        file.write(br)
+        file.write("Должны скинуть: ")
+        file.write(br)
+        for i in range(0, len(minus_people_rep)):
+            debt = (str(minus_people_rep[i]) + ' - {}р.'.format(minus_summ_rep[i]))
+            file.write(debt)
+            file.write(br)
+        file.write(br)
+        file.write("Должны получить: ")
+        file.write(br)
+        for i in range(0, len(plus_people_rep)):
+            overpay = (str(plus_people_rep[i]) + ' - {}р.'.format(plus_summ_rep[i]))
+            file.write(overpay)
+            file.write(br)
+        file.write(br)
+        file.write("Список транзакций: ")
+        file.write(br)
+        for i in range(0, len(transaction_minus)):
+            transactions = (transaction_minus[i] + ' ---> ' + transaction_plus[i] + "  " + str(transaction_summ[i]) + "р.")
+            file.write(transactions)
+            file.write(br)
+
+
     # print()
     # print("Всего потрачено: {}р.".format(amount))
     # print()
