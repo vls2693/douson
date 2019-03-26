@@ -24,9 +24,9 @@ def my_form_post():
     name7 = str(request.form['name7'])
     summ7 = int(request.form['summ7'])
 
-    receiver(person1=name1, person2=name2, person3=name3, person4=name4,
-             person5=name5, person6=name6, person7=name7, spent1=summ1, spent2=summ2,
-             spent3=summ3, spent4=summ4, spent5=summ5, spent6=summ6, spent7=summ7)
+    # receiver(person1=name1, person2=name2, person3=name3, person4=name4,
+    #          person5=name5, person6=name6, person7=name7, spent1=summ1, spent2=summ2,
+    #          spent3=summ3, spent4=summ4, spent5=summ5, spent6=summ6, spent7=summ7)
 
     return render_template('file.html')
 
