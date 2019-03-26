@@ -8,7 +8,7 @@ def main():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-    return render_template('index.html')
+    #return render_template('index.html')
     name1 = str(request.form['name1'])
     summ1 = int(request.form['summ1'])
     name2 = str(request.form['name2'])
@@ -28,16 +28,15 @@ def my_form_post():
              person5=name5, person6=name6, person7=name7, spent1=summ1, spent2=summ2,
              spent3=summ3, spent4=summ4, spent5=summ5, spent6=summ6, spent7=summ7)
 
+    return render_template('file.html')
+
+
 if __name__ == "__main__":
     app.run()
 
 
-
-
-
-
-#http://thewebland.net/development/python/flask/mega-tutorial-part-1-hello-world/
-#https://code.tutsplus.com/ru/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
+# http://thewebland.net/development/python/flask/mega-tutorial-part-1-hello-world/
+# https://code.tutsplus.com/ru/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
 '''
 пример добавления строки в форму
 http://www.html.by/threads/13985-Dobavlenie-polej-formy-po-nazhatiju-na-knopku
