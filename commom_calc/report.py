@@ -6,7 +6,7 @@ def report(people, summ, amount, average, plus_people_rep, plus_summ_rep,
            transaction_summ, transaction_plus):  # отчёт
     name_list = 'Скидывали:'
     br = '<br>'
-    with open("../flask/templates/file.html", "w") as file:
+    with open("../flask/templates/file.html", "w", encoding="utf-8") as file:
         file.write(name_list)
         file.write(br)
         for i in range(0, len(summ)):
