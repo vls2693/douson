@@ -1,14 +1,15 @@
 from commom_calc.base import receiver
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
+
 
 @app.route("/")
 def main():
     return render_template('index.html')
 
+
 @app.route('/', methods=['POST'])
 def my_form_post():
-    #return render_template('index.html')
     name1 = str(request.form['name1'])
     summ1 = int(request.form['summ1'])
     name2 = str(request.form['name2'])
@@ -28,6 +29,11 @@ def my_form_post():
              person5=name5, person6=name6, person7=name7, spent1=summ1, spent2=summ2,
              spent3=summ3, spent4=summ4, spent5=summ5, spent6=summ6, spent7=summ7)
 
+    return redirect(url_for('results'))
+
+
+@app.route("/results")
+def results():
     return render_template('file.html')
 
 
