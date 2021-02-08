@@ -15,19 +15,18 @@ summ = [0, 0, 0, 0, 0, 0, 0]  # потраченное каждым
 def receiver(person1=None, person2=None, person3=None, person4=None, person5=None, person6=None, person7=None,
              spent1=None, spent2=None, spent3=None, spent4=None, spent5=None, spent6=None, spent7=None):
     people = [person1, person2, person3, person4, person5, person6, person7]
-    summ = [spent1, spent2, spent3, spent4, spent5, spent6, spent7]
+    common_sum = [spent1, spent2, spent3, spent4, spent5, spent6, spent7]
 
-    amount = amount_counter(summ)
-    average = average_counter(summ, amount)
+    amount = amount_counter(common_sum)
+    average = average_counter(common_sum, amount)
 
-    plus_people, plus_summ, minus_people, minus_summ, plus_people_rep, plus_summ_rep, minus_people_rep, minus_summ_rep \
-        = sorting(people, summ, average)
+    plus_people, plus_sum, minus_people, minus_sum, plus_people_rep, plus_sum_rep, minus_people_rep, minus_sum_rep \
+        = sorting(people, common_sum, average)
 
-    transaction_minus, transaction_summ, transaction_plus = transaction(plus_people,
-                                                                        plus_summ, minus_people, minus_summ)
+    transaction_minus, transaction_sum, transaction_plus = transaction(plus_people, plus_sum, minus_people, minus_sum)
 
-    report(people, summ, amount, average, plus_people_rep, plus_summ_rep, minus_people_rep, minus_summ_rep,
-           transaction_minus, transaction_summ, transaction_plus)
+    report(people, common_sum, amount, average, plus_people_rep, plus_sum_rep, minus_people_rep, minus_sum_rep,
+           transaction_minus, transaction_sum, transaction_plus)
 
 
 '''
