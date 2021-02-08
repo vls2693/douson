@@ -22,5 +22,5 @@ def sorting(people, summ, average):
             minus_people_rep.append(people[i])
         else:
             continue
-    return plus_people, plus_summ, minus_people, minus_summ, plus_people_rep, \
-           plus_summ_rep, minus_people_rep, minus_summ_rep
+    return plus_people, plus_summ, minus_people, minus_summ, plus_people_rep, plus_summ_rep, minus_people_rep, \
+        minus_summ_rep

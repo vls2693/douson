@@ -20,8 +20,8 @@ def receiver(person1=None, person2=None, person3=None, person4=None, person5=Non
     amount = amount_counter(summ)
     average = average_counter(summ, amount)
 
-    plus_people, plus_summ, minus_people, minus_summ, plus_people_rep, plus_summ_rep, minus_people_rep, \
-    minus_summ_rep = sorting(people, summ, average)
+    plus_people, plus_summ, minus_people, minus_summ, plus_people_rep, plus_summ_rep, minus_people_rep, minus_summ_rep \
+        = sorting(people, summ, average)
 
     transaction_minus, transaction_summ, transaction_plus = transaction(plus_people,
                                                                         plus_summ, minus_people, minus_summ)

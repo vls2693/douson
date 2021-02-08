@@ -38,10 +38,10 @@ def report(people, summ, amount, average, plus_people_rep, plus_summ_rep,
         file.write("Список транзакций: ")
         file.write(br)
         for i in range(0, len(transaction_minus)):
-            transactions = (transaction_minus[i] + ' ---> ' + transaction_plus[i] + "  " + str(transaction_summ[i]) + "р.")
+            transactions = (transaction_minus[i] + ' ---> ' + transaction_plus[i] + "  " + str(transaction_summ[i])
+                            + "р.")
             file.write(transactions)
             file.write(br)
-
 
     # print()
     # print("Всего потрачено: {}р.".format(amount))
