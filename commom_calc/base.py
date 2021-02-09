@@ -12,10 +12,13 @@ summ = [0, 0, 0, 0, 0, 0, 0]  # потраченное каждым
 '''
 
 
-def receiver(person1=None, person2=None, person3=None, person4=None, person5=None, person6=None, person7=None,
-             spent1=None, spent2=None, spent3=None, spent4=None, spent5=None, spent6=None, spent7=None):
-    people = [person1, person2, person3, person4, person5, person6, person7]
-    common_sum = [spent1, spent2, spent3, spent4, spent5, spent6, spent7]
+def receiver(whole_list):
+    people = []
+    common_sum = []
+    whole_list = whole_list
+    for i in range(0, int(len(whole_list) / 2)):
+        people.append(whole_list.get('name{}'.format(i)))
+        common_sum.append(int(whole_list.get('sum{}'.format(i))))
 
     amount = amount_counter(common_sum)
     average = average_counter(common_sum, amount)
