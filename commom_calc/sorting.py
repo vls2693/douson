@@ -22,5 +22,7 @@ def sorting(people, common_sum, average):
             minus_people_rep.append(people[i])
         else:
             continue
-    return plus_people, plus_sum, minus_people, minus_sum, plus_people_rep, plus_sum_rep, minus_people_rep, \
-        minus_sum_rep
+    return plus_people, plus_sum, minus_people, minus_sum, plus_people_rep, \
+        plus_sum_rep, minus_people_rep, minus_sum_rep
+# добавить сортировку списков, добавить классы, примеры по ссылке
+# https://tproger.ru/translations/python-sorting

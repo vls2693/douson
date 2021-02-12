@@ -1,4 +1,8 @@
 def transaction(plus_people, plus_sum, minus_people, minus_sum):
+    plus_people = plus_people
+    plus_sum = plus_sum
+    minus_people = minus_people
+    minus_sum = minus_sum
     transaction_minus = []
     transaction_sum = []
     transaction_plus = []
@@ -22,5 +26,6 @@ def transaction(plus_people, plus_sum, minus_people, minus_sum):
                     transaction_sum.append(plus_sum[k])
                     transaction_plus.append(plus_people[k])
                     minus_sum[i] = minus_sum[i] - plus_sum[k]
+                    plus_sum[k] = 0
 
     return transaction_minus, transaction_sum, transaction_plus

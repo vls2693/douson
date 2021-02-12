@@ -23,13 +23,16 @@ def receiver(whole_list):
     amount = amount_counter(common_sum)
     average = average_counter(common_sum, amount)
 
-    plus_people, plus_sum, minus_people, minus_sum, plus_people_rep, plus_sum_rep, minus_people_rep, minus_sum_rep \
-        = sorting(people, common_sum, average)
+    plus_people, plus_sum, minus_people, minus_sum, plus_people_rep, \
+        plus_sum_rep, minus_people_rep, minus_sum_rep = \
+        sorting(people, common_sum, average)
 
-    transaction_minus, transaction_sum, transaction_plus = transaction(plus_people, plus_sum, minus_people, minus_sum)
+    transaction_minus, transaction_sum, transaction_plus = transaction(
+        plus_people, plus_sum, minus_people, minus_sum)
 
-    report(people, common_sum, amount, average, plus_people_rep, plus_sum_rep, minus_people_rep, minus_sum_rep,
-           transaction_minus, transaction_sum, transaction_plus)
+    report(people, common_sum, amount, average, plus_people_rep, plus_sum_rep,
+           minus_people_rep, minus_sum_rep, transaction_minus,
+           transaction_sum, transaction_plus)
 
 
 '''
@@ -54,6 +57,6 @@ print("Всего потрачено: " + str(amount))
 лучше .join или .format
 
 print("Всего потрачено: {}".format(amount))
-тут str не нужно, обрати внимание, 
+тут str не нужно, обрати внимание,
 про format  все переменные полиморфируют в стринги
 '''
