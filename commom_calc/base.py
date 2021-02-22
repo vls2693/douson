@@ -17,8 +17,12 @@ def receiver(whole_list):
     common_sum = []
     whole_list = whole_list
     for i in range(0, int(len(whole_list) / 2)):
-        people.append(whole_list.get('name{}'.format(i)))
-        common_sum.append(int(whole_list.get('sum{}'.format(i))))
+        print(whole_list.get('name{}'.format(i)))
+        if whole_list.get('name{}'.format(i)) == '':
+            break
+        else:
+            people.append(whole_list.get('name{}'.format(i)))
+            common_sum.append(int(whole_list.get('sum{}'.format(i))))
 
     amount = amount_counter(common_sum)
     average = average_counter(common_sum, amount)
