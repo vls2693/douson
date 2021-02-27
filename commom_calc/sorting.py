@@ -9,13 +9,13 @@ def sorting(people, common_sum, average):
     minus_sum_rep = []
     for i in range(0, len(common_sum)):
         if common_sum[i] > average:
-            m = common_sum[i] - average
+            m = float('{:.2f}'.format(common_sum[i] - average))
             plus_sum.append(m)
             plus_people.append(people[i])
             plus_sum_rep.append(m)
             plus_people_rep.append(people[i])
         elif common_sum[i] < average:
-            n = average - common_sum[i]
+            n = float('{:.2f}'.format(average - common_sum[i]))
             minus_sum.append(n)
             minus_people.append(people[i])
             minus_sum_rep.append(n)
