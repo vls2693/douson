@@ -10,7 +10,6 @@ def receiver(whole_list):
     common_sum = []
     whole_list = whole_list
     for i in range(0, int(len(whole_list) / 2)):
-        print(whole_list.get('name{}'.format(i)))
         if whole_list.get('name{}'.format(i)) == '':
             break
         else:

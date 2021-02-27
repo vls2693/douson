@@ -1,3 +1,17 @@
+html {
+    height: 100%;
+}
+
 body {
-    background-color: #FFEBCD;
+    display: flex;
+    flex-direction: vertical;
+    margin: 0px;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+    height: 100%;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
 }
