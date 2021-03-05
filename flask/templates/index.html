@@ -10,53 +10,25 @@
               filename='favicon.ico')}}" type="image/x-icon">
 </head>
     <body>
-        <form class="form" method="POST">
-            <h1>Fill the form</h1>
-            <div class="bunch">
-                <fieldset>
-                    <input class="name" name="name0" placeholder="Name" type="text">
-                    <input class="sum" name="sum0" placeholder="Sum" type="number">
-                </fieldset>
-                <fieldset>
-                    <input class="name" name="name1" placeholder="Name" type="text">
-                    <input class="sum" name="sum1" placeholder="Sum" type="number">
-                </fieldset>
-                <fieldset>
-                    <input class="name" name="name2" placeholder="Name" type="text">
-                    <input class="sum" name="sum2" placeholder="Sum" type="number">
-                </fieldset>
-                <fieldset>
-                    <input class="name" name="name3" placeholder="Name" type="text">
-                    <input class="sum" name="sum3" placeholder="Sum" type="number">
-                </fieldset>
-                <fieldset>
-                    <input class="name" name="name4" placeholder="Name" type="text">
-                    <input class="sum" name="sum4" placeholder="Sum" type="number">
-                </fieldset>
-                <fieldset>
-                    <input class="name" name="name5" placeholder="Name" type="text">
-                    <input class="sum" name="sum5" placeholder="Sum" type="number">
-                </fieldset>
-                <fieldset>
-                    <input class="name" name="name6" placeholder="Name" type="text">
-                    <input class="sum" name="sum6" placeholder="Sum" type="number">
-                </fieldset>
-                <fieldset>
-                    <input class="name" name="name7" placeholder="Name" type="text">
-                    <input class="sum" name="sum7" placeholder="Sum" type="number">
-                </fieldset>
-                <fieldset>
-                    <input class="name" name="name8" placeholder="Name" type="text">
-                    <input class="sum" name="sum8" placeholder="Sum" type="number">
-                </fieldset>
-                <fieldset>
-                    <input class="name" name="name9" placeholder="Name" type="text">
-                    <input class="sum" name="sum9" placeholder="Sum" type="number">
-                </fieldset>
-            </div>
-            <input class="send" type="submit" value="Send">
-            <input class="reset" type="reset" value="Reset">
-        </form>
+        <main>
+            <form class="form" method="POST">
+                <h1>Fill the form</h1>
+                <div class="bunch">
+                    <fields>
+                        <input class="name" name="name0" placeholder="Name" type="text">
+                        <input class="sum" name="sum0" placeholder="Sum" type="number">
+                    </fields>
+                    <fields>
+                        <input class="name" name="name1" placeholder="Name" type="text">
+                        <input class="sum" name="sum1" placeholder="Sum" type="number">
+                    </fields>
+                </div>
+                <input class="send" type="submit" value="Send">
+                <input class="reset" type="reset" value="Reset">
+            </form>
+        <button id="add" class="send" onclick="addString()" value="Add">Add</button>
+        <button id="remove" onclick="removeString()" value="Remove">Remove</button>
+        </main>
     <script src="{{ url_for('static', filename = 'script.js') }}"></script>
     </body>
 </html>
