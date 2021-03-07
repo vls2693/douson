@@ -11,8 +11,8 @@ def main():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-    whole_list = request.form
-    receiver(whole_list)
+    whole_dict = request.form
+    receiver(whole_dict)
     return redirect(url_for('results'))
 
 

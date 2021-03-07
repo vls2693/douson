@@ -5,16 +5,15 @@ from commom_calc.report import report
 from commom_calc.transaction import transaction
 
 
-def receiver(whole_list):
+def receiver(whole_dict):
     people = []
     common_sum = []
-    whole_list = whole_list
-    for i in range(0, int(len(whole_list) / 2)):
-        if whole_list.get('name{}'.format(i)) == '':
-            break
-        else:
-            people.append(whole_list.get('name{}'.format(i)))
-            common_sum.append(int(whole_list.get('sum{}'.format(i))))
+    print(whole_dict.getlist('name'))
+    print(whole_dict.getlist('sum'))
+
+    for i in range(0, int(len(whole_dict.getlist('name')))):
+        people.append(whole_dict.getlist('name')[i])
+        common_sum.append(int(whole_dict.getlist('sum')[i]))
 
     amount = amount_counter(common_sum)
     average = average_counter(common_sum, amount)
