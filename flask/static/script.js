@@ -14,6 +14,5 @@ function addString() {
 function removeString() {
     var parent = document.querySelector('.bunch')
     var elem = document.querySelector('fieldset')
-    parent.removeChild(elem)
-//    elem.remove()
+    parent.removeChild(parent.lastChild)
 }
