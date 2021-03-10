@@ -96,3 +96,10 @@ button {
   border-radius:0;
   transition:border-color .25s ease, box-shadow .25s ease;
 }
+
+/* styles for results */
+
+h2 {
+    font-size: 20px;
+    color: white;
+}

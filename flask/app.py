@@ -5,7 +5,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
 @app.route("/")
-def main():
+def index():
     return render_template('index.html')
 
 
@@ -13,7 +13,9 @@ def main():
 def my_form_post():
     whole_dict = request.form
     receiver(whole_dict)
-    return redirect(url_for('results'))
+    # return redirect(url_for('results'))
+    # return render_template('file.html')
+    return render_template('result.html')
 
 
 @app.route("/results")
