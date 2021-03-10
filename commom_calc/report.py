@@ -1,6 +1,3 @@
-from flask import render_template
-
-
 def report(people, common_sum, amount, average, plus_people_rep, plus_sum_rep,
            minus_people_rep, minus_sum_rep, transaction_minus,
            transaction_sum, transaction_plus):  # отчёт
@@ -45,7 +42,6 @@ def report(people, common_sum, amount, average, plus_people_rep, plus_sum_rep,
             file.write(br)
         file.write(back_link)
         file.close()
-    return render_template('file.html')
 
 # пример записи в html
 # http://qaru.site/questions/308612/how-to-write-and-save-html-file-in-python

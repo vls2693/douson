@@ -8,8 +8,6 @@ from commom_calc.transaction import transaction
 def receiver(whole_dict):
     people = []
     common_sum = []
-    print(whole_dict.getlist('name'))
-    print(whole_dict.getlist('sum'))
 
     for i in range(0, int(len(whole_dict.getlist('name')))):
         people.append(whole_dict.getlist('name')[i])
