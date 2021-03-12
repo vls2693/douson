@@ -10,19 +10,15 @@
               filename='favicon.ico')}}" type="image/x-icon">
 </head>
     <body>
-        <main>
+        <main class="result-main">
             <h1>Results</h1>
             <h2>Who spent money:</h2>
-            A - 100 р.
-	        <br>
-            B - 200 р.
-		    <br>
-            C - 300 р.
-			<br>
-            D - 400 р.
-			<br>
-            E - 500 р.
-            <br>
+            <span>
+                {% for transactions in transaction_list %}
+                {% set transaction = transactions.split(';') %}
+                {{ transaction[0] }} - {{ transaction[1] }}<br>
+                {% endfor %}
+            </span>
             <h2>Common spent sum:</h2>
             <span>{{common_spent_sum}}</span>
 
@@ -31,28 +27,36 @@
 			<br>
             <h2>EXAMPLE:</h2>
             <span>
-                {% for list in variable1 %}
-                {% set list1 = list.split(';') %}
-                The grass is {{ list[0] }} and the boat is {{ list[1] }}<br>
+                <ul>
+                {% for transactions in transaction_list %}
+                {% set transaction = transactions.split(';') %}
+                <li>The grass is {{ transaction[0] }} and the boat is {{ transaction[1] }}</li>
                 {% endfor %}
+                </ul>
             </span>
             <br>
             <h2>Who must pay:</h2>
-            A - 200.0р.
-			<br>
-            B - 100.0р.
+            <span>
+                {% for transactions in transaction_list %}
+                {% set transaction = transactions.split(';') %}
+                {{ transaction[0] }} - {{ transaction[1] }}<br>
+                {% endfor %}
+            </span>
 			<br>
             <h2>Who must be payed:</h2>
-            D - 100.0р.
-			<br>
-            E - 200.0р.
-			<br>
+            <span>
+                {% for transactions in transaction_list %}
+                {% set transaction = transactions.split(';') %}
+                {{ transaction[0] }} - {{ transaction[1] }}<br>
+                {% endfor %}
+            </span>
             <h2>Transaction list:</h2>
-            A ---> D  100.0р.
-            <br>
-            A ---> E  100.0р.
-            <br>
-            B ---> E  100.0р.
+            <span>
+                {% for transactions in transaction_list %}
+                {% set transaction = transactions.split(';') %}
+                {{ transaction[0] }} ---> {{ transaction[1] }} {{ transaction[2] }}<br>
+                {% endfor %}
+            </span>
 			<br>
             <br>
 			<a href="/">Come back to the previous page</a>

@@ -15,8 +15,8 @@ def my_form_post():
     receiver(whole_dict)
     # return redirect(url_for('results'))
     # return render_template('file.html')
-    mass = ['green; blue', 'red; white']
-    return render_template('result.html', common_spent_sum='777', average_sum='888', variable1=mass)
+    mass = ['green; blue;EXAMPLE', 'red; white;EXAMPLE2']
+    return render_template('result.html', common_spent_sum='777', average_sum='888', transaction_list=mass)
 
 
 @app.route("/results")
