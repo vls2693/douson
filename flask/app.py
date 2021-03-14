@@ -1,5 +1,5 @@
 from commom_calc.base import receiver
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
@@ -12,25 +12,10 @@ def index():
 @app.route('/', methods=['POST'])
 def my_form_post():
     whole_dict = request.form
-    receiver(whole_dict)
-    # return redirect(url_for('results'))
-    # return render_template('file.html')
-    mass = ['green; blue;EXAMPLE', 'red; white;EXAMPLE2']
-    return render_template('result.html', common_spent_sum='777', average_sum='888', transaction_list=mass)
-
-
-@app.route("/results")
-def results():
-    return render_template('file.html')
+    names, amount, average, debt, overpay, transactions = receiver(whole_dict)
+    return render_template('result.html', name_list=names, common_spent_sum=amount, average_sum=average, debt_list=debt,
+                           overpay_list=overpay, transaction_list=transactions)
 
 
 if __name__ == "__main__":
     app.run()
-
-
-# http://thewebland.net/development/python/flask/mega-tutorial-part-1-hello-world/
-# https://code.tutsplus.com/ru/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
-'''
-пример добавления строки в форму
-http://www.html.by/threads/13985-Dobavlenie-polej-formy-po-nazhatiju-na-knopku
-'''

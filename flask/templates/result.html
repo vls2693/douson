@@ -14,9 +14,9 @@
             <h1>Results</h1>
             <h2>Who spent money:</h2>
             <span>
-                {% for transactions in transaction_list %}
-                {% set transaction = transactions.split(';') %}
-                {{ transaction[0] }} - {{ transaction[1] }}<br>
+                {% for names in name_list %}
+                {% set name = names.split(';') %}
+                {{ name[0] }} - {{ name[1] }}<br>
                 {% endfor %}
             </span>
             <h2>Common spent sum:</h2>
@@ -27,16 +27,16 @@
 			<br>
             <h2>Who must pay:</h2>
             <ul>
-                {% for transactions in transaction_list %}
-                {% set transaction = transactions.split(';') %}
-                <li>{{ transaction[0] }} - {{ transaction[1] }}</li>
+                {% for debts in debt_list %}
+                {% set debt = debts.split(';') %}
+                <li>{{ debt[0] }} - {{ debt[1] }}</li>
                 {% endfor %}
             </ul>
             <h2>Who must be payed:</h2>
             <ul>
-                {% for transactions in transaction_list %}
-                {% set transaction = transactions.split(';') %}
-                <li>{{ transaction[0] }} - {{ transaction[1] }}</li>
+                {% for overpays in overpay_list %}
+                {% set overpay = overpays.split(';') %}
+                <li>{{ overpay[0] }} - {{ overpay[1] }}</li>
                 {% endfor %}
             </ul>
             <h2>Transaction list:</h2>
