@@ -76,6 +76,10 @@ input:focus {
     filter: brightness(85%);
 }
 
+.remove {
+    margin-bottom: 15px;
+}
+
 .reset:focus {
     border:1px solid #a0b3b0;
 }
