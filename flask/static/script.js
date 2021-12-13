@@ -13,6 +13,9 @@ function addString() {
 
 function removeString() {
     var parent = document.querySelector('.bunch')
+    var childCount = parent.childElementCount
     var elem = document.querySelector('fieldset')
-    parent.removeChild(parent.lastChild)
+    if (childCount > 2) {
+        parent.removeChild(parent.lastChild)
+    }
 }

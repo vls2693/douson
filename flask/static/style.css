@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: vertical;
     margin: 0px;
-    background: #c1bdba;
+    /*background: #c1bdba; */
     height: 100%;
 }
 
