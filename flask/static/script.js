@@ -1,8 +1,3 @@
-//document.addEventListener('DOMContentLoaded', function() {
-//    console.log('it works!')
-//})
-
-
 
 function addString() {
     var app = document.querySelector('.bunch')
@@ -14,7 +9,6 @@ function addString() {
 function removeString() {
     var parent = document.querySelector('.bunch')
     var childCount = parent.childElementCount
-    var elem = document.querySelector('fieldset')
     if (childCount > 2) {
         parent.removeChild(parent.lastChild)
     }

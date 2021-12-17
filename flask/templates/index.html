@@ -23,11 +23,11 @@
                         <input class="sum" name="sum" required placeholder="Sum" type="number">
                     </fieldset>
                 </div>
-                <button id="add" class="send" onclick="addString()" value="Add">Add</button>
-                <button id="remove" class="remove" onclick="removeString()" value="Remove">Remove</button>
                 <input class="send" type="submit" value="Send">
                 <input class="reset" type="reset" value="Reset">
             </form>
+            <button id="add" class="send" onclick="addString()" value="Add">Add</button>
+            <button id="remove" class="remove" onclick="removeString()" value="Remove">Remove</button>
         </main>
         <script src="{{ url_for('static', filename = 'script.js') }}"></script>
     </body>
